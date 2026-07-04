@@ -116,9 +116,8 @@ def load_mcp_config() -> dict:
 #
 # Example structure:
 #
-# from google.adk.tools import tool
+# from google.adk.tools import FunctionTool
 #
-# @tool
 # def search_github_tools(query: str) -> dict:
 #     """Search for available GitHub tools by keyword.
 #

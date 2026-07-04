@@ -1,5 +1,5 @@
-# Google ADK
-google-adk>=0.1.0
+# Google ADK (pinned; McpToolset / StdioConnectionParams API verified on this version)
+google-adk==2.3.0
 
 # MCP client library
 mcp>=1.0.0
