@@ -139,11 +139,6 @@ def create_agent() -> LlmAgent:
     )
 
 
-# ADK's agent loader looks for a module-level attribute named ``root_agent``.
-# Build the baseline agent at import time so ``adk web`` discovers it.
-root_agent = create_agent()
-
-
 # ---------------------------------------------------------------------------
 # BONUS: Tool Search with defer_loading (+25 pts)
 # ---------------------------------------------------------------------------
@@ -176,3 +171,14 @@ def create_agent_with_tool_search() -> LlmAgent:
             + [github_toolset_deferred]
         ),
     )
+
+# ---------------------------------------------------------------------------
+# Root agent — MUST be defined AFTER both create_agent() and
+# create_agent_with_tool_search() so both functions are available in
+# namespace when the assignment runs. To switch between baseline and
+# bonus, edit the single line below.
+# ---------------------------------------------------------------------------
+
+# BONUS: swap this line to ``create_agent()`` if you want to fall back to
+# the eager-loading baseline (Part 2 without the +25 bonus mechanism).
+root_agent = create_agent_with_tool_search()
